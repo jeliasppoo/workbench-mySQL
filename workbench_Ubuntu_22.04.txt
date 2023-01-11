@@ -1,0 +1,9 @@
+sudo snap install mysql-workbench-community;
+sudo snap connect mysql-workbench-community:password-manager-service :password-manager-service;
+wget https://dev.mysql.com/downloads/file/?id=514052;
+sudo dpkg -i mysql-workbench-community*.deb;
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.23-1_all.deb;
+sudo dpkg -i mysql-apt-config_0.8.23-1_all.deb;
+sudo apt-key export 3A798D29 | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/mysql-key.gpg;
+sudo apt update && sudo apt upgrade;
+sudo apt install mysql-workbench-community;
